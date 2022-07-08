@@ -3,6 +3,7 @@ layout: post
 title: Practic Malware Analysis - Walkthrough 
 subtitle: Book by Michael Sikorski and Andrew Honig
 cover-img: /assets/img/path.jpg
+readtime: true
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [books, test]
