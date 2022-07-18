@@ -79,4 +79,7 @@ For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC
 > 3. Are there any indications that either of these files is packed or obfuscated?
 If so, what are these indicators?
 
+No, there are not any indicators that either of those files are packed or obfuscated.   
+As it can be seen in the PEiD, both of them are compiled using *Microsoft Visual C++ 6.0 DLL*.
+
 
