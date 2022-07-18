@@ -49,7 +49,8 @@ for the sha256.
 
 Using the above mentioned information, the hashes for the files are as follows:
 
-#**Lab01-01.dll**
+# **Lab01-01.dll**
+
 MD5: 290934C61DE9176AD682FFDD65F0A669  
 SHA256: F50E42C8DFAAB649BDE0398867E930B86C2A599E8DB83B8260393082268F2DBA
 
