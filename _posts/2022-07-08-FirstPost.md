@@ -23,7 +23,7 @@ described in the chapter to gain information about the files and
 answer the questions below.
 
 ## Questions
->   Upload the files to http://www.VirusTotal.com/ and view the reports. Does
+>   1. Upload the files to http://www.VirusTotal.com/ and view the reports. Does
 either file match any existing antivirus signatures?
 
 In order to calculate the hash of the file, we will use the powershell *Get-FileHash* command:
@@ -59,3 +59,12 @@ Using the above mentioned information, the hashes for the files are as follows:
 **MD5**: BB7425B82141A1C0F7D60E5106676BB1  
 **SHA256**: 58898BD42C5BD3BF9B1389F0EEE5B39CD59180E8370EB9EA838A0B327BD6FE47
 
+Now, let's get back to our questions.
+
+**Yes**, the both of the files match the existing antivirus signatures
+The result for Lab01-01.exe:
+![alt text](assets/img/Lab01-01.exe virustotal.png)
+
+> 2. When were these files compiled?
+
+In order to answer to this question, we can use the 
