@@ -75,3 +75,8 @@ In order to answer to this question, we can use two methods:
 
 For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC   
 For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC
+
+> 3. Are there any indications that either of these files is packed or obfuscated?
+If so, what are these indicators?
+
+
