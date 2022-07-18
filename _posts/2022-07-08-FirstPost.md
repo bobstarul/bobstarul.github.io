@@ -61,8 +61,8 @@ Using the above mentioned information, the hashes for the files are as follows:
 
 Now, let's get back to our questions.
 
-**Yes**, the both of the files match the existing antivirus signatures
-The result for Lab01-01.exe:
+**Yes**, the both of the files match the existing antivirus signatures   
+The result for Lab01-01.exe:   
 ![alt text](assets/img/Lab01-01.exe virustotal.png)
 
 > 2. When were these files compiled?
