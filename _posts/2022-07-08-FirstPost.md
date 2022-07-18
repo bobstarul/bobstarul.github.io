@@ -74,5 +74,5 @@ In order to answer to this question, we can use two methods:
 
 2.We can check the **IMAGE_FILE_HEADER** in __PEview__ and look for the Time Date Stamp.
 
-For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC
+For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC   
 For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC
