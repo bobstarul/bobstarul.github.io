@@ -68,7 +68,7 @@ The result for Lab01-01.exe:
 > 2. When were these files compiled?
 
 
-In order to answer to this question, we can use two methods:  
+In order to answer to this question, we can use two methods:     
 1.We can check the information from the details tab on VirusTotal, the History section, for the "Creation Time".
 2.We can check the **IMAGE_FILE_HEADER** in __PEview__ and look for the Time Date Stamp.
 
