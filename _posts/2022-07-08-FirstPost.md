@@ -63,8 +63,14 @@ Now, let's get back to our questions.
 
 **Yes**, the both of the files match the existing antivirus signatures   
 The result for Lab01-01.exe:   
-[![alt text](assets/img/Lab01-01.exe virustotal.png)]
+![](assets/img/Lab01-01.exe virustotal.png)
 
 > 2. When were these files compiled?
 
-In order to answer to this question, we can use the 
+
+In order to answer to this question, we can use two methods:  
+1.We can check the information from the details tab on VirusTotal, the History section, for the "Creation Time".
+2.We can check the **IMAGE_FILE_HEADER** in __PEview__ and look for the Time Date Stamp.
+
+For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC
+For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC
