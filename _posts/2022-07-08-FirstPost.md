@@ -151,31 +151,49 @@ malware on infected machines?
 
  In order to identify this malware on infected machines, we can look for a running service named _MalService_ and also check for connections to the URL _http://www.malwareanalysisbook.com_ .
  
- ##Lab1-3
+ ## Lab1-3
  
  > 1.Upload the Lab01-03.exe file to http://www.VirusTotal.com/. Does it match
 any existing antivirus definitions?
 
-
+As it can be seen, the files matches 62 of the existing antivirus definitions.
+![Q1_VirusTotal_Lab01-03][Q1_VirusTotal_Lab01-03]
 
 > 2.Are there any indications that this file is packed or obfuscated? If so,
 what are these indicators? If the file is packed, unpack it if possible.
 
+PEiD lets us know that FSG 1.0 packer was used for this file. 
+![PEiD_Lab01-03][Q2_PEiD_Lab01-03]
+
+Also, the virtual size of _20480 bytes_ is way larger than the raw size of _1164 bytes_.
+![Q2_PeiD_Lab01-03_Sections][Q2_PeiD_Lab01-03_Sections]
 
 > 3.Do any imports hint at this program’s functionality? If so, which imports
 are they and what do they tell you?
+
+The only imports that we can find in this file are _LoadLibraryA_ and _GetProcAddress_. 
+![Q3_PEStudio_Functions][Q3_PEStudio_Functions]
+
+The above specified functions can cause other modules to be loaded during the calling process. But, with the information we have right now, we can't say for certain which are those.
 
 
 > 4.What host- or network-based indicators could be used to identify this
 malware on infected machines?
 
+As of this moment, there aren't any host- or network-based indicaters that we could use to identify this malware on infected machines.
 
 [PEiD]:/assets/img/Lab1-1/PeiD_MicrosoftVisualC++6.0.png
 [DepWalkerLab01-01.dll_CreateProcess]:/assets/img/Lab1-1/DepWalker_Lab01-01.dll_CreateProcess.png
 [DepWalkerLab01-01.dll_socket]:/assets/img/Lab1-1/DepWalker_Lab01-01.dll_socket.png
 [DepWalkerLab01-01.exe_Imports]:/assets/img/Lab1-1/DepWalker_Lab01-01.exe_Imports.png
+
 [Lab01-02.exe_VirusTotal]:/assets/img/Lab1-2/Question1_VirusTotal_Lab01-02.exe.png
 [PEiD_UPX_Lab01-02.exe]:/assets/img/Lab1-2/Lab01-02.exe_PEiD.png
 [PeStudio_Lab01-02_sections]:/assets/img/Lab1-2/Question2_PeStudio_Lab01-02.exe.png
 [Lab01-02_UPX]:/assets/img/Lab1-2/Question2_UPX_Lab01-02.exe.png
 [PEStudio_Imports_Lab-01-02_Unpacked.exe]:/assets/img/Lab1-2/Question3_PeStudio_Lab01-02.exe.png
+
+[Q1_VirusTotal_Lab01-03]:/assets/img/Lab1-3/Q1_VirusTotal_Lab01-03/png
+[Q2_PEiD_Lab01-03]:/assets/img/Lab1-3/[Q2_PEiD_Lab01-03].png
+[Q2_PeiD_Lab01-03_Sections]:/assets/img/Lab1-3/[Q2_PeiD_Lab01-03_Sections].png
+[Q3_PEStudio_Functions]:/assets/img/Lab1-3/[Q3_PEStudio_Functions].png
