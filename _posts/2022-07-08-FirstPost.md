@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Practical Malware Analysis - Chapter_1L
+title: Practical Malware Analysis - Static Techniques
 subtitle: Labs Walkthrough
 #cover-img: /assets/img/path.jpg
 readtime: true
