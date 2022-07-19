@@ -86,13 +86,17 @@ are they?
 
 **Lab01-01.dll**  
 Taking into consideration that the functions _CloseHandle_, _CreateMutexA_, _CreateProcessA_, _OpenMutexA_ and _Sleep_ are imported from _KERNEL32.DLL_, we can assume that the _.dll_ will start a process, and sleep (pause its execution) for a certain amount of time, most likely as an evasive measure.
-[DependencyWalker_Lab01-01.dll_CreateProcess][DepWalkerLab01-01.dll_CreateProcess]
+
+![DependencyWalker_Lab01-01.dll_CreateProcess][DepWalkerLab01-01.dll_CreateProcess]
+
 Also, finding the IP address : 127.26.152.13, and the socket specific functions, such as _connect_,_bind_ imported from _WS2_32.DLL_ led us into thinking that it might connect to a C2 server in order to receive further commands, or to download other malware.
-[DependencyWalker_Lab01-01.dll_Socket][DepWalkerLab01-01.dll_socket]
+
+![DependencyWalker_Lab01-01.dll_Socket][DepWalkerLab01-01.dll_socket]
 
 **Lab01-01.exe**  
 The _.exe_ imports functions such as _FindNextFileA_, _FindFirstFileA_, _CreateFile_, _CopyFile_, indicate that the malware will search for specific files and also create and copy some of those.
-[DependencyWalker_Lab01-01.exe Imports][DepWalkerLab01-01.exe_Imports]
+
+![DependencyWalker_Lab01-01.exe Imports][DepWalkerLab01-01.exe_Imports]
 
 > 5.Are there any other files or host-based indicators that you could look for
 on infected systems?
