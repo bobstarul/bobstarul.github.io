@@ -113,15 +113,50 @@ The IP address _127.26.152.13_ found in the _.dll_ can be an indicator to find t
 The purpose of the _.exe_ file is to find and run the _.dll_ file, which in turn connects to the C2 server at _127.26.152.13_. From there, malicious files can be downloaded.
 
 
+## Lab 1-2
+
+> 1. Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match
+any existing antivirus definitions?
+
+Yes, it does. 55 vendros flagged this file as malicious.
+![VirusTotal_Lab01-02.exe_Result][Lab01-02.exe_VirusTotal]
+
+> 2. Are there any indications that this file is packed or obfuscated? If so,
+what are these indicators? If the file is packed, unpack it if possible.
+
+As it can be seen in PEiD, the entry point is UPX1. And, recalling the information in the book, the UPX packer changes the name of the sections in such values.
+![PEiD_UPX_Lab01-02.exe][PEiD_UPX_Lab01-02.exe]
+
+The _.UPX0_ section has a raw size of _2048 bytes_ and a virtual size of _24756 bytes_, which indicates that a packer will unpack the executable code to the allocated _.text_ section.  
+![PeStudio_Lab01-02_sections][PeStudio_Lab01-02_sections]
+So, observing the _UPX0_, _UPX1_, _UPX2_ sections, we can surely say that the file is packed with the open-source UPX packer.  
+To unpack it, we can download the UPX tool from [github][https://upx.github.io/].  
+Now, let's run the unpacker:
+![Upx_command_Lab01-02][Lab01-02_UPX]  
+After the unpacking process, we run _PeID_ again and find that this file was compiled using _Microsoft Visual C++ 6.0_.  
+Opening the file in _PEStudio_, we find a lot more informations about the file's strings and imports.
+
+> 3. Do any imports hint at this program’s functionality? If so, which imports
+are they and what do they tell you?
+
+The imports that are visible are: 
+![PEStudio_Imports_Lab-01-02_Unpacked.exe][PEStudio_Imports_Lab-01-02_Unpacked.exe]  
+We can assume that the malicious file will try to connect to the _http://www.malwareanalysisbook.com_ URL and bind it to a serice in order to maintain persistence. This might be a way to connect to the C2 server in order to receive further commands or download other malicious files.
 
 
 
+> 4. What host- or network-based indicators could be used to identify this
+malware on infected machines?
 
-
-
+ In order to identify this malware on infected machines, we can look for a running service named _MalService_ and also check for connections to the URL _http://www.malwareanalysisbook.com_ .
 
 
 [PEiD]:/assets/img/Lab1-1/PeiD_MicrosoftVisualC++6.0.png
 [DepWalkerLab01-01.dll_CreateProcess]:/assets/img/Lab1-1/DepWalker_Lab01-01.dll_CreateProcess.png
 [DepWalkerLab01-01.dll_socket]:/assets/img/Lab1-1/DepWalker_Lab01-01.dll_socket.png
 [DepWalkerLab01-01.exe_Imports]:/assets/img/Lab1-1/DepWalker_Lab01-01.exe_Imports.png
+[Lab01-02.exe_VirusTotal]:/assets/img/Lab1-2/Question1_VirusTotal_Lab01-02.exe.png
+[PEiD_UPX_Lab01-02.exe]:/assets/img/Lab1-2/Lab01-02.exe_PEiD.png
+[PeStudio_Lab01-02_sections]:/assets/img/Lab1-2/Question2_PeStudio_Lab01-02.exe.png
+[Lab01-02_UPX]:/assets/img/Lab1-2/Question2_UPX_Lab01-02.exe.png
+[PEStudio_Imports_Lab-01-02_Unpacked.exe]:/assets/img/Lab1-2/Question3_PeStudio_Lab01-02.exe.png
