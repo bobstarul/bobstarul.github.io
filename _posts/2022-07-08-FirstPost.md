@@ -113,7 +113,7 @@ The IP address _127.26.152.13_ found in the _.dll_ can be an indicator to find t
 The purpose of the _.exe_ file is to find and run the _.dll_ file, which in turn connects to the C2 server at _127.26.152.13_. From there, malicious files can be downloaded.
 
 
-## Lab 1-2
+ ## Lab 1-2
 
 > 1.Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match
 any existing antivirus definitions?
