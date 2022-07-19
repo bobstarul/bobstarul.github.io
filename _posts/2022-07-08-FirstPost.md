@@ -2,10 +2,10 @@
 layout: post
 title: Practical Malware Analysis - Chapter_1L
 subtitle: Labs Walkthrough
-cover-img: /assets/img/path.jpg
+#cover-img: /assets/img/path.jpg
 readtime: true
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+#thumbnail-img: /assets/img/thumb.png
+#share-img: /assets/img/path.jpg
 tags: [books, test]
 ---
 
@@ -63,7 +63,7 @@ Now, let's get back to our questions.
 
 **Yes**, the both of the files match the existing antivirus signatures   
 The result for Lab01-01.exe:   
-![](assets/img/Lab01-01.exe virustotal.png)
+![](assets/img/Lab01-01.exe virustotal.png "Is this working?")
 
 > 2. When were these files compiled?
 
