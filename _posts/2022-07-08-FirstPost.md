@@ -236,6 +236,7 @@ can you learn from the resource?
 The resource is an executable.
 
 ![Q5_Resource-Hacker_Lab01-04][Q5_Resource-Hacker_Lab01-04]
+
 Using PEStudio we can observe that there we find the same strings as stated above. It also downloads and runs the _updater.exe_ file.
 
 
