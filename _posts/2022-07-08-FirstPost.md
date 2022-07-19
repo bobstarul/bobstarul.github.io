@@ -45,7 +45,7 @@ for the md5 hash, and:
 ```powershell
 powershell Get-FileHash -algorithm SHA256 Lab01-01.dll
 ```
-for the sha256.
+for sha256.
 
 Using the above mentioned information, the hashes for the files are as follows:
 
@@ -61,9 +61,9 @@ Using the above mentioned information, the hashes for the files are as follows:
 
 Now, let's get back to our questions.
 
-**Yes**, the both of the files match the existing antivirus signatures   
+**Yes**, both of the files match the existing antivirus signatures   
 The result for Lab01-01.exe:   
-![](assets/img/Lab01-01.exe virustotal.png "Is this working?")
+![](assets/img/Lab01-01.exe virustotal.png)
 
 > 2. When were these files compiled?
 
