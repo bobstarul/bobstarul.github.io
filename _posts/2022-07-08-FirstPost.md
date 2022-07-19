@@ -115,13 +115,13 @@ The purpose of the _.exe_ file is to find and run the _.dll_ file, which in turn
 
 ## Lab 1-2
 
-> 1. Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match
+> 1.Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match
 any existing antivirus definitions?
 
 Yes, it does. 55 vendros flagged this file as malicious.
 ![VirusTotal_Lab01-02.exe_Result][Lab01-02.exe_VirusTotal]
 
-> 2. Are there any indications that this file is packed or obfuscated? If so,
+> 2.Are there any indications that this file is packed or obfuscated? If so,
 what are these indicators? If the file is packed, unpack it if possible.
 
 As it can be seen in PEiD, the entry point is UPX1. And, recalling the information in the book, the UPX packer changes the name of the sections in such values.
@@ -136,7 +136,7 @@ Now, let's run the unpacker:
 After the unpacking process, we run _PeID_ again and find that this file was compiled using _Microsoft Visual C++ 6.0_.  
 Opening the file in _PEStudio_, we find a lot more informations about the file's strings and imports.
 
-> 3. Do any imports hint at this program’s functionality? If so, which imports
+> 3.Do any imports hint at this program’s functionality? If so, which imports
 are they and what do they tell you?
 
 The imports that are visible are: 
@@ -145,7 +145,7 @@ We can assume that the malicious file will try to connect to the _http://www.mal
 
 
 
-> 4. What host- or network-based indicators could be used to identify this
+> 4.What host- or network-based indicators could be used to identify this
 malware on infected machines?
 
  In order to identify this malware on infected machines, we can look for a running service named _MalService_ and also check for connections to the URL _http://www.malwareanalysisbook.com_ .
