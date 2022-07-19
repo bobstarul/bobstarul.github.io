@@ -71,15 +71,55 @@ The result for Lab01-01.exe:
 In order to answer this question, we can use two methods:    
 
 - We can either check the information from the details tab on VirusTotal, the History section, for the "Creation Time".
-- Or, we can check the **IMAGE_FILE_HEADER** in __PEview__ and look for the Time Date Stamp.
+- Or, we can check the **IMAGE_FILE_HEADER** in __PEview__ and look for the Time Date Stamp:
+   ![PEStudio view of Lab01-01.dll showing compiler-timetstamp](/assets/img/Lab1-1/Lab1-1_lab01-01.dll_PEStudio.png)
 
-For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC   
-For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC
+For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC  
+For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC  
 
 > 3.Are there any indications that either of these files is packed or obfuscated?
 If so, what are these indicators?
 
 No, there are not any indicators that either of those files are packed or obfuscated.   
 As it can be seen in the PEiD, both of them are compiled using *Microsoft Visual C++ 6.0 DLL*.
+![PEiD - Compiled using Microsoft Visual C++ 6.0 DLL][PEiD]
+
+> 4.Do any imports hint at what this malware does? If so, which imports
+are they?
+
+**Lab01-01.dll**
+Taking into consideration that the functions _CloseHandle_, _CreateMutexA_, _CreateProcessA_, _OpenMutexA_ and _Sleep_ are imported from _KERNEL32.DLL_, we can assume that the _.dll_ will start a process, and sleep (pause its execution) for a certain amount of time, most likely as an evasive measure.
+[DependencyWalker_Lab01-01.dll_CreateProcess][DepWalkerLab01-01.dll_CreateProcess]
+Also, finding the IP address : 127.26.152.13, and the socket specific functions, such as _connect_,_bind_ imported from _WS2_32.DLL_ lead us to think that it might connect to a C2 server in order to receive further commands, or to download other malware.
+[DependencyWalker_Lab01-01.dll_Socket][DepWalkerLab01-01.dll_socket]
+
+**Lab01-01.exe**
+The _.exe_ imports functions such as _FindNextFileA_, _FindFirstFileA_, _CreateFile_, _CopyFile_, indicate that the malware will search for specific files and also create and compy some of them.
+[DependencyWalker_Lab01-01.exe Imports][DepWalkerLab01-01.exe_Imports]
+
+> 5.Are there any other files or host-based indicators that you could look for
+on infected systems?
+
+Yes. If we look inside the **Lab01_01.exe** file, we find the string _C:\windows\system32\kerne132.dll_ which is an attempt to trick the user into thinking that it is the same with _Kernel32_. 
+
+> 6.What network-based indicators could be used to find this malware on
+infected machines?
+
+The IP address _127.26.152.13_ found in the _.dll_ can be an indicator to find this malware on infected machines.
+
+> 7.What would you guess is the purpose of these files?
+
+The purpose of the _.exe_ file is to find and run the _.dll_ file, which in turn connects to the C2 server at _127.26.152.13_. From there, malicious files can be downloaded.
 
 
+
+
+
+
+
+
+
+
+[PEiD]:
+[DepWalkerLab01-01.dll_CreateProcess]:
+[DepWalkerLab01-01.exe_Imports]:
