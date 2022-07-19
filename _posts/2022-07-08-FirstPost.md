@@ -118,13 +118,13 @@ The purpose of the _.exe_ file is to find and run the _.dll_ file, which in turn
 > 1.Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match
 any existing antivirus definitions?
 
-Yes, it does. 55 vendros flagged this file as malicious.
+Yes, it does. 55 vendors flagged this file as malicious.
 ![VirusTotal_Lab01-02.exe_Result][Lab01-02.exe_VirusTotal]
 
 > 2.Are there any indications that this file is packed or obfuscated? If so,
 what are these indicators? If the file is packed, unpack it if possible.
 
-As it can be seen in PEiD, the entry point is UPX1. And, recalling the information in the book, the UPX packer changes the name of the sections in such values.
+As it can be seen in PEiD, the entry point is UPX1. And, recalling the information in the book, the UPX packer changes the name of the sections in such strings.
 ![PEiD_UPX_Lab01-02.exe][PEiD_UPX_Lab01-02.exe]
 
 The _.UPX0_ section has a raw size of _2048 bytes_ and a virtual size of _24756 bytes_, which indicates that a packer will unpack the executable code to the allocated _.text_ section.  
