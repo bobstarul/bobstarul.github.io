@@ -193,7 +193,7 @@ As of this moment, there aren't any host- or network-based indicaters that we co
 [Lab01-02_UPX]:/assets/img/Lab1-2/Question2_UPX_Lab01-02.exe.png
 [PEStudio_Imports_Lab-01-02_Unpacked.exe]:/assets/img/Lab1-2/Question3_PeStudio_Lab01-02.exe.png
 
-[Q1_VirusTotal_Lab01-03]:/assets/img/Lab1-3/Q1_VirusTotal_Lab01-03/png
+[Q1_VirusTotal_Lab01-03]:/assets/img/Lab1-3/Q1_VirusTotal_Lab01-03.png
 [Q2_PEiD_Lab01-03]:/assets/img/Lab1-3/[Q2_PEiD_Lab01-03].png
 [Q2_PeiD_Lab01-03_Sections]:/assets/img/Lab1-3/[Q2_PeiD_Lab01-03_Sections].png
 [Q3_PEStudio_Functions]:/assets/img/Lab1-3/[Q3_PEStudio_Functions].png
