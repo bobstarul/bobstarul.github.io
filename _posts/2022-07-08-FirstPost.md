@@ -23,7 +23,7 @@ described in the chapter to gain information about the files and
 answer the questions below.
 
 ## Questions
->   1. Upload the files to http://www.VirusTotal.com/ and view the reports. Does
+>   1.Upload the files to http://www.VirusTotal.com/ and view the reports. Does
 either file match any existing antivirus signatures?
 
 In order to calculate the hash of the file, we will use the powershell *Get-FileHash* command:
@@ -65,7 +65,7 @@ Now, let's get back to our questions.
 The result for Lab01-01.exe:   
 ![](assets/img/Lab01-01.exe virustotal.png)
 
-> 2. When were these files compiled?
+> 2.When were these files compiled?
 
 
 In order to answer to this question, we can use two methods:    
@@ -76,7 +76,7 @@ In order to answer to this question, we can use two methods:
 For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC   
 For **Lab01-01.dll**, the creation time is : 2010/12/19 Sun 16:16:38 UTC
 
-> 3. Are there any indications that either of these files is packed or obfuscated?
+> 3.Are there any indications that either of these files is packed or obfuscated?
 If so, what are these indicators?
 
 No, there are not any indicators that either of those files are packed or obfuscated.   
