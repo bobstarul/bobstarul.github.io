@@ -128,19 +128,20 @@ As it can be seen in PEiD, the entry point is UPX1. And, recalling the informati
 ![PEiD_UPX_Lab01-02.exe][PEiD_UPX_Lab01-02.exe]
 
 The _.UPX0_ section has a raw size of _2048 bytes_ and a virtual size of _24756 bytes_, which indicates that a packer will unpack the executable code to the allocated _.text_ section.  
-![PeStudio_Lab01-02_sections][PeStudio_Lab01-02_sections]
+![PeStudio_Lab01-02_sections][PeStudio_Lab01-02_sections]  
 So, observing the _UPX0_, _UPX1_, _UPX2_ sections, we can surely say that the file is packed with the open-source UPX packer.  
-To unpack it, we can download the UPX tool from [github][https://upx.github.io/].  
+To unpack it, we can download the UPX tool from [github](https://upx.github.io/).  
 Now, let's run the unpacker:
-![Upx_command_Lab01-02][Lab01-02_UPX]  
+![Upx_command_Lab01-02][Lab01-02_UPX]    
 After the unpacking process, we run _PeID_ again and find that this file was compiled using _Microsoft Visual C++ 6.0_.  
 Opening the file in _PEStudio_, we find a lot more informations about the file's strings and imports.
 
 > 3.Do any imports hint at this program’s functionality? If so, which imports
 are they and what do they tell you?
 
-The imports that are visible are: 
-![PEStudio_Imports_Lab-01-02_Unpacked.exe][PEStudio_Imports_Lab-01-02_Unpacked.exe]  
+The imports that are visible are:   
+
+![PEStudio_Imports_Lab-01-02_Unpacked.exe][PEStudio_Imports_Lab-01-02_Unpacked.exe]    
 We can assume that the malicious file will try to connect to the _http://www.malwareanalysisbook.com_ URL and bind it to a serice in order to maintain persistence. This might be a way to connect to the C2 server in order to receive further commands or download other malicious files.
 
 
