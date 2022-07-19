@@ -50,12 +50,10 @@ for sha256.
 Using the above mentioned information, the hashes for the files are as follows:
 
 **Lab01-01.dll**
-
 **MD5**: 290934C61DE9176AD682FFDD65F0A669  
 **SHA256**: F50E42C8DFAAB649BDE0398867E930B86C2A599E8DB83B8260393082268F2DBA
 
 **Lab01-01.exe**
-
 **MD5**: BB7425B82141A1C0F7D60E5106676BB1  
 **SHA256**: 58898BD42C5BD3BF9B1389F0EEE5B39CD59180E8370EB9EA838A0B327BD6FE47
 
@@ -66,7 +64,6 @@ The result for Lab01-01.exe:
 ![Virus total analysis of Lab01-01.exe](/assets/img/Lab01-01.exe%20virustotal.png)
 
 > 2.When were these files compiled?
-
 
 In order to answer this question, we can use two methods:    
 
