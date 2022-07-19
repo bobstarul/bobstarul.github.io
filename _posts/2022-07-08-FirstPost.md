@@ -63,7 +63,7 @@ Now, let's get back to our questions.
 
 **Yes**, both of the files match the existing antivirus signatures   
 The result for Lab01-01.exe:   
-![Virus total analysis of Lab01-01.exe]([assets/img/Lab01-01.exe virustotal.png](https://github.com/bobstarul/bobstarul.github.io/blob/master/assets/img/Lab01-01.exe%20virustotal.png))
+![Virus total analysis of Lab01-01.exe](https://github.com/bobstarul/bobstarul.github.io/blob/master/assets/img/Lab01-01.exe%20virustotal.png)
 
 > 2.When were these files compiled?
 
