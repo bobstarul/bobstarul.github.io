@@ -150,6 +150,24 @@ We can assume that the malicious file will try to connect to the _http://www.mal
 malware on infected machines?
 
  In order to identify this malware on infected machines, we can look for a running service named _MalService_ and also check for connections to the URL _http://www.malwareanalysisbook.com_ .
+ 
+ ##Lab1-3
+ 
+ > 1.Upload the Lab01-03.exe file to http://www.VirusTotal.com/. Does it match
+any existing antivirus definitions?
+
+
+
+> 2.Are there any indications that this file is packed or obfuscated? If so,
+what are these indicators? If the file is packed, unpack it if possible.
+
+
+> 3.Do any imports hint at this program’s functionality? If so, which imports
+are they and what do they tell you?
+
+
+> 4.What host- or network-based indicators could be used to identify this
+malware on infected machines?
 
 
 [PEiD]:/assets/img/Lab1-1/PeiD_MicrosoftVisualC++6.0.png
