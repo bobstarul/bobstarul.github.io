@@ -182,6 +182,56 @@ malware on infected machines?
 
 As of this moment, there aren't any host- or network-based indicaters that we could use to identify this malware on infected machines.
 
+## Lab 1-4
+
+> 1. Upload the Lab01-04.exe file to http://www.VirusTotal.com/. Does it match
+any existing antivirus definitions?
+
+Yes, it does.
+
+![Q1_VirusTotal_Lab01-04][Q1_VirusTotal_Lab01-04]
+
+> 2.Are there any indications that this file is packed or obfuscated? If so,
+what are these indicators? If the file is packed, unpack it if possible.
+
+The file is not packed, or obfuscated, as we can find a lot of strings and a lot of the files that are being used.
+All the sections, _.text_, _.rdata_, _.data_ and _.rsrc_ are visible.
+Using PEiD, we find out that it is compiled using _Microsoft Visual C++ 6.0_.
+![Q2_PEiD_Lab01-04][Q2_PEiD_Lab01-04]
+
+
+> 3.When was this program compiled?
+
+This program was compiled on Fri Aug 30 22:26:59 2019 | UTC. 
+![Q3_PEStudio_Compile-Time_Lab01-04][Q3_PEStudio_Compile-Time_Lab01-04]
+
+
+> 4.Do any imports hint at this program’s functionality? If so, which imports
+are they and what do they tell you?
+
+Yes.
+![Q4_PeStudio1_Lab01-04][Q4_PeStudio1_Lab01-04]
+The malware may try to create the files _\system32\wupdmgrd.exe_, _\system32\wupdmgr.exe_, _\system32\wupdmgr.exe_,_\winup.exe_,  to mimic Windows Update Manager. More than this, it will download another executable from _http://www.practicalmalwareanalysis.com/updater.exe_.  
+Also, it may use _psapi.dll_ to look for process statuses and most likely maintain persistence. Also, _sfc_os.dll_ is used to monitor system files for validity.  
+The _LookupPrivelegeValue_ function is used to check the privilege level. Along with _AdjustTokenPrivileges_, it might try to change the privileges. 
+![Q4.1_PeStudio1_Lab01-04][Q4.1_PeStudio1_Lab01-04]
+_LoadResource_ and _SizeofResource_ is used to load the resource found in the file.
+
+
+> 5.What host- or network-based indicators could be used to identify this
+malware on infected machines?
+
+The presence of the above mentiond executables and the connection to the URL can be indicators that could be used to identify this malware on infected machines.
+
+> 6.This file has one resource in the resource section. Use Resource Hacker
+to examine that resource, and then use it to extract the resource. What
+can you learn from the resource?
+
+The resource is an executable.
+![Q5_Resource-Hacker_Lab01-04][Q5_Resource-Hacker_Lab01-04]
+There are mostly the same strings used. It also downloads and runs the _updater.exe_ file.
+
+
 [PEiD]:/assets/img/Lab1-1/PeiD_MicrosoftVisualC++6.0.png
 [DepWalkerLab01-01.dll_CreateProcess]:/assets/img/Lab1-1/DepWalker_Lab01-01.dll_CreateProcess.png
 [DepWalkerLab01-01.dll_socket]:/assets/img/Lab1-1/DepWalker_Lab01-01.dll_socket.png
@@ -197,3 +247,10 @@ As of this moment, there aren't any host- or network-based indicaters that we co
 [Q2_PEiD_Lab01-03]:/assets/img/Lab1-3/[Q2_PEiD_Lab01-03].png
 [Q2_PeiD_Lab01-03_Sections]:/assets/img/Lab1-3/[Q2_PeiD_Lab01-03_Sections].png
 [Q3_PEStudio_Functions]:/assets/img/Lab1-3/[Q3_PEStudio_Functions].png
+
+[Q1_VirusTotal_Lab01-04]:/assets/img/Lab1-4/Q1_VirusTotal_Lab01-04.png
+[Q2_PEiD_Lab01-04]:/assets/img/Lab1-4/Q2_PEiD_Lab01-04.png
+[Q3_PEStudio_Compile-Time_Lab01-04]:/assets/img/Lab1-4/Q3_PEStudio_Compile-Time_Lab01-04.png
+[Q4_PeStudio1_Lab01-04]:/assets/img/Lab1-4/Q4_PeStudio1_Lab01-04.png
+[Q4.1_PeStudio1_Lab01-04]:/assets/img/Lab1-4/Q4.1_PeStudio1_Lab01-04.png
+[Q5_Resource-Hacker_Lab01-04]:/assets/img/Lab1-4/Q5_Resource-Hacker_Lab01-04.png
