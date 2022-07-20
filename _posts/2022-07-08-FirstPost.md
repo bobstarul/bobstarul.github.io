@@ -76,7 +76,7 @@ For **Lab01-01.exe**, the creation time is : 2010/12/19 Sun 16:16:19 UTC
 If so, what are these indicators?
 
 No, there are not any indicators that either of those files are packed or obfuscated.   
-As it can be seen in the PEiD, both of them are compiled using *Microsoft Visual C++ 6.0 DLL*.
+As it can be seen in the PEiD, both of them are compiled using *Microsoft Visual C++ 6.0 DLL*.    
 ![PEiD - Compiled using Microsoft Visual C++ 6.0 DLL][PEiD]
 
 > 4.Do any imports hint at what this malware does? If so, which imports
