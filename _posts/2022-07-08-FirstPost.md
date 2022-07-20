@@ -11,12 +11,10 @@ tags: [books, test]
 
 # Chapter 1
 
-These series of blogs will act as a note-taking environment for me but also as a walkthroogh for the Practical Malware Analysis Book.
-Let's start of with the first labs.
+These series of blogs will act as a note-taking environment for me but also as a walkthroogh for the Practical Malware Analysis Book.  
+Let's start off with the first labs.
 
-As stated in the book, the purpose of the labs is to give the reader the opportunity to practice the skills that are taught in the chapters.
-
-# Lab 1-1
+## Lab 1-1
 The following block represents the exact assignment from the book:
 >This lab uses the files Lab01-01.exe and Lab01-01.dll. Use the tools and techniques
 described in the chapter to gain information about the files and
@@ -113,7 +111,7 @@ The IP address _127.26.152.13_ found in the _.dll_ can be an indicator to find t
 The purpose of the _.exe_ file is to find and run the _.dll_ file, which in turn connects to the C2 server at _127.26.152.13_. From there, malicious files can be downloaded.
 
 
- ## Lab 1-2
+# Lab 1-2
 
 > 1.Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match
 any existing antivirus definitions?
@@ -151,7 +149,7 @@ malware on infected machines?
 
  In order to identify this malware on infected machines, we can look for a running service named _MalService_ and also check for connections to the URL _http://www.malwareanalysisbook.com_ .
  
- ## Lab1-3
+## Lab 1-3
  
  > 1.Upload the Lab01-03.exe file to http://www.VirusTotal.com/. Does it match
 any existing antivirus definitions?
