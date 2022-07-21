@@ -140,6 +140,7 @@ are they and what do they tell you?
 The imports that are visible are:   
 
 ![PEStudio_Imports_Lab-01-02_Unpacked.exe][PEStudio_Imports_Lab-01-02_Unpacked.exe]    
+
 We can assume that the malicious file will try to connect to the _http://www.malwareanalysisbook.com_ URL and bind it to a serice in order to maintain persistence. This might be a way to connect to the C2 server in order to receive further commands or download other malicious files.
 
 
