@@ -1,0 +1,125 @@
+---
+layout: post
+title: Practical Malware Analysis - C Code in Assembly
+subtitle: Labs Walkthrough
+#cover-img: /assets/img/path.jpg
+readtime: true
+#thumbnail-img: /assets/img/thumb.png
+#share-img: /assets/img/path.jpg
+tags: [books, test]
+---
+
+Alright!! Let's get familiar with C code constructs in Assembly. 
+
+#Lab 06-01
+
+> In this lab, you will analyze the malware found in the file Lab06-01.exe.
+>
+> Questions
+>
+> 1. What is the major code construct found in the only subroutine called by main?
+
+The main function can be seen in Figure 1.1.
+
+![Q1_Lab06-01.exe][Q1_Lab06-01.exe]
+
+Now, let's look into the subroutine, in Figure 1.2.
+
+![Q1.1_Lab06-01.exe][Q1.1_Lab06-01.exe]
+
+We can see that there is a call being made to the function _InternetGetConnectedState_. The program checks for an internet connection. 
+
+At 0x401015 a conditional jump is made. If the condition is met, a string will most likely print on the screen, saying that there is no internet connection. On the other side, another message stating that there is a connection will pop up on the screen.
+
+The major code construct found in the only subroutine called by main is an **if statement**. 
+
+
+
+> 2. What is the subroutine located at 0x40105F?
+
+The block of code can be seen in Figure 2.1.
+
+![Q2_Lab06-01.exe][Q2_Lab06-01.exe]
+
+Taking into consideration that the subroutine is called in the if statement right after a string being pushed to the stack, **we can assume that the subroutine located at 0x40105f is a printf statement**.
+
+
+
+> 3. What is the purpose of this program?
+
+The purpose of this program is to check for an internet conection. If it exists, a message will be printed on screen regarding the result.
+
+
+#Lab06-02
+
+> Analyze the malware found in the file Lab06-02.exe.
+>
+> Questions
+> 1. What operation does the first subroutine called by main perform?
+
+The first subroutine called by main is the one analyzed before. It performs an if statement to check if an internet connection exists.
+
+
+> 2. What is the subroutine located at 0x40117F?
+
+The subroutine located at 0x40117F is the **printf function**. We can now rename it.
+
+![Q2.1_Lab06-02.exe][Q2.1_Lab06-02.exe]
+
+
+> 3. What does the second subroutine called by main do?
+
+The second subroutine opens an internet connection and tries to download the page at _http://www.practicalmalwareanalysis.com/cc.htm_ .
+
+
+> 4. What type of code construct is used in this subroutine?
+
+In this subroutine, the if statement is used. Also, checking the microsoft documentation regarding the _InternetReadFile_ function, we can assume that the buffer variable is an array.
+
+
+> 5. Are there any network-based indicators for this program?
+
+Yes, the network-based indicator for this program is the URL _http://www.practicalmalwareanalysis.com/cc.htm_
+
+
+> 6. What is the purpose of this malware?
+
+It firstly checks for an internet connection. Then, using the subroutine _401040_, it opens an internet connection in order to read a file from the practicalmalwareanalysis URL. Then, it tries to read a string from the html file, character by character. If it finds the string "<!- -"(without the space in between the dashes) then, the program will print a "success:parsed command is X ", string. 
+
+After this, the value 60.000 is pushed on to the stack before the _Sleep_ function to make the program sleep for 60s.
+
+
+# __Work In Progress__
+
+#Lab 06-03
+
+> Questions
+>
+> 1. Compare the calls in main to Lab 6-2’s main method. What is the new function called from main?
+
+
+
+> 2. What parameters does this new function take?
+
+
+
+
+
+> 3. What major code construct does this function contain?
+
+
+
+
+
+> 4. What can this function do?
+
+
+
+
+
+> 5. Are there any host-based indicators for this malware?
+
+
+
+
+> 6. What is the purpose of this malware?
