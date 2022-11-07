@@ -18,7 +18,7 @@ navbar-links:
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+ # Author's home: "https://deanattali.com"
 
 # --- Logo --- #
 
@@ -48,7 +48,7 @@ social-network-links:
 #  youtube: c/daattali
 #  medium: yourname
 #  reddit: yourname
-linkedin: https://www.linkedin.com/in/bogdan-radu-andrei-guran/
+linkedin: /bogdan-radu-andrei-guran
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -259,6 +259,9 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  # Adaugat pt SEO: https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/installation.md
+  - jekyll-seo-tag
+
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
